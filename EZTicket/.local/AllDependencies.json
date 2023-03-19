@@ -7570,9 +7570,9 @@
     "restore": {
       "projectUniqueName": "EZTicket",
       "projectName": "EZTicket",
-      "projectPath": "C:\\Users\\Shree\\Desktop\\JComps\\EZTicket\\.local",
+      "projectPath": "C:\\Users\\Shree\\Desktop\\JComps\\EZTicket\\EZTicket\\.local",
       "packagesPath": "C:\\Users\\Shree\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Shree\\Desktop\\JComps\\EZTicket\\.local"
+      "outputPath": "C:\\Users\\Shree\\Desktop\\JComps\\EZTicket\\EZTicket\\.local"
     },
     "frameworks": {
       "net461": {
