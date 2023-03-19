@@ -1,0 +1,239 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="MakeMyTrip_Flights" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_source" Type="InArgument(x:String)" />
+    <x:Property Name="in_destination" Type="InArgument(x:String)" />
+    <x:Property Name="in_date" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1392,1015</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>MakeMyTrip_Flights_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="35">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="MakeMyTrip_Flights" sap:VirtualizedContainerService.HintSize="476,950" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="s:String[]" Name="SplitDate" />
+      <Variable x:TypeArguments="x:String" Name="CurrMonth" />
+      <Variable x:TypeArguments="x:String" Name="CurMonth" />
+      <Variable x:TypeArguments="x:Int32" Name="index">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" Value="1" />
+        </Variable.Default>
+      </Variable>
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:String[]">[SplitDate]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[Split(in_date," ")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Flight Booking, Cheap Flights , Air Ticket Booking at Lowest Airfare | MakeMyTri" sap:VirtualizedContainerService.HintSize="434,758" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="True" ScopeGuid="7f1f390d-0436-4d12-804d-24bf6f054a25" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,542" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+            <uix:NClick ClickType="Single" DisplayName="Click &quot;One Way&quot;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="0, 0, 0, 0" FullSelectorArgument="&lt;html app='chrome.exe' title='*MakeMyTrip' /&gt;&lt;webctrl aaname='From' parentid='root' tag='SPAN' /&gt;" Guid="37a70e66-f66e-4e2c-830d-a798a2ce02fb" SearchSteps="Selector" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <Sequence DisplayName="Selecting &quot;From&quot;(Source)" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NClick ClickType="Single" DisplayName="Click 'From'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7f1f390d-0436-4d12-804d-24bf6f054a25" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.makemytrip.com/flights/" DesignTimeRectangle="354, 317, 261, 17" ElementType="Text" FriendlyName="'From'" FullSelectorArgument="&lt;webctrl aaname='From' parentid='root' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='From' parentid='root' tag='SPAN' type='' check:text='From' /&gt;" Guid="17ddc926-b5da-436b-ad66-40447fd5d792" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQkAAAAVCAYAAABVCxswAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFeSURBVHhe7djRbYMwAEXRzsc47BIGCXtEjMEQgAvGLgY/DBFK0zr3SO8jIeGPK+DLAEACkQCQRCQAJBEJAElEAkASkQAgDcNgt0TiUZmiKOKVtWndTwDkz8dhJxKVadxHAJ9lGwc/IgF8OBWGcKcj0d5LU9wa09zixxB7LHhEqR7uwKStTTmdN3icmY6v/jOeF8DvUkFQey4S2wCM5u+D/9koBL9zn39CsP08/rMS5wXwOioGezt4cVma2t0u2BhELzFbU5fxBW7vNlZRWM4TR2E+R3nn9SjwaioCR3vuTiKKhL4LWP2WSAB/ggrAmV2MBHcSwH+gLv6zuxgJ9/3hOwkiAbyLuvDPrO97u8uRmMyhWN5lrO4siATwNuriP5qPQxwJAFlRAUhtGwc/IgFkSEUgNRUHPyIBZEZFIDUVhnBEAsiIisDeVBDCdV1nRySATKgQ7E1Fwc/HYV5nvgEK5vBKpGJJxQAAAABJRU5ErkJggg==" InformativeScreenshot="fb676eda871e4448048691a1d177eb29.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Flight Booking, Cheap Flights , Air Ticket Booking at Lowest Airfare | MakeMyTrip' /&gt;" SearchSteps="Selector, FuzzySelector">
+                    <uix:TargetAnchorable.PointOffset>
+                      <uix:PointOffset Position="BottomLeft" X="14" Y="-9" />
+                    </uix:TargetAnchorable.PointOffset>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT' with the value of in_source" EmptyFieldMode="[NEmptyFieldMode.None]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="7f1f390d-0436-4d12-804d-24bf6f054a25" Text="[in_source]" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.makemytrip.com/flights/" DesignTimeRectangle="333, 340, 320, 45" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;input' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl type='text' tag='INPUT' aaname='' /&gt;" Guid="f5899bc6-dcea-426c-bbe3-b7be573cfb86" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAUAAAAAtCAYAAADfjbKaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATuSURBVHhe7d1JL2xbGMbx+gImJsJIYiQxN5D4CBIT4nvomyAYYCCIEIkIERFhoEuICRMJgujby0FpqnSl773nPMtedRQlqoqb3LvX80vewd5VpzD5n71r117leH5+FqfTKfvnj+I8uxfn6Z3sntzKzvGNmu2jaw6HY8D8cl8FNFuuS7+z6brwmX8Ozz/MxoHHZ9b3z/zP3umns7KyIqenpz5zdnbmd87Pz9VcXFzI5eWlXF9fy+3trdzd3cn9/b04np6eZGdnR4UPwdN/4Ptf2O8vyeFwbDNrf+Ly1aw6T/zP7rHPrOwc+czytttnln65Ps7WYUAzPz8vh4eHn47L5RK3263m6OhIjY4kYogQ3tzcqAg6Hh4eZHt7W/0P4PLcyOPTsxAR2Q3OdhE/j8fjjaADFdzc3FTxIyKyu7cRdKCC6+vrcv/waD1MRGRfOOs9OTlRp8OOq6srWV1dlZeXF+thIiL7Quvw/iDeE3TgMHB5edl6iIjI/g4ODtRRoAOHgUtLS9ZuIiL729/fV1eHVQAXFxet3URE9re3t/caQFwNWVhYsHYTEdkfbv7A+4AqgPhgIRGRKXZ3d9UHphlAIjKON4C4FMwAEpFJcPsvbptjAInIOAwgERkLp8AMIBEZCZ8DZACJyEiIX8gBxAIK+fn5EhMTI2FhYRIfHy/t7e3Wo0RE/224AhzSVWCsporgpaamysbGhlpVdWRkROLi4qSgoMB6VuDm5uYkIyPD75SVlalla4iIfhLip+4ECTaAFRUVkpSUZG39hRuLIyMjgz6a1AEsLy+X8fFxmZ6e9g7uUMHSNUREPwkBPD4+Dj6ACQkJMjo6am35whFgaWmptRUYHcC6ujp1dElE9G9DALFMftABjI2N/XT5rKqqKklPT7e2AvNVAHEKjFNhPD42NibFxcWSl5enVrEGnIbX1NRIVlaWZGZmSmVlpc/6hljuH2Hu6OiQ7u5uycnJkcLCQnV0uba2po5o8fPxulNTU1wXkcgAIQcwLS1N6uvrrS1fycnJ0tLSYm0FRgcQEcPNyQgeBqvU4AubdAAROIRrcHDQe2qMEOfm5qr9PT09MjQ0JCUlJSpyMzMz6vV1ABHHhoYGGR4eVs9BRDFtbW3S39+vnoPXwSoRRGRvCCDaF3QAJycnJSIiQoXrrcbGRomOjg76NFYH8P0gSIiXDiC2t7a2rH/1uqw1fmZ2drbPcl5Y3h9hq66uVlerdQBra2u9v9vExIT6Gc3NzSqy0NXVpfa9/7uIyH5CDiB0dnZKeHi4pKSkqFPexMREdWocFRUlvb291rMCowP4/iLI7Oys+g5PHcD3V4T1frzniL9B0/uLiorUqq86gG9PsfXPxNGfhiNDBpDIDCGfAmu46tva2qreQxsYGFBHUngdRLCvr8961td0jL56D5ABJKKf8u0AfgbvzzU1NVlbXws1gMGeAjOARKQhgCF9DOanhRpAwBVgxC2QiyAMIBFpCGBIH4T+ad8JIAT6MRgGkIg0BJCLIRCRkb61GAIR0f8ZPu/LABKRkbgiNBEZiwEkImMxgERkLAaQiIzFABKRsfitcERkLAaQiIyFAOJuEAaQiIzDABKRsZxOJwNIRGZiAInIWAggvoPIG0B8CRFWecZOlJHD4XDsNGgbGofWfQggvn8DD2Cbw+Fw7DhoHFr3GkC3/Ab62YZPpkvGVQAAAABJRU5ErkJggg==" InformativeScreenshot="9ae8291b12654d274686200321a96516.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Flight Booking, Cheap Flights , Air Ticket Booking at Lowest Airfare | MakeMyTrip' /&gt;" SearchSteps="FuzzySelector, Image">
+                    <uix:TargetAnchorable.PointOffset>
+                      <uix:PointOffset Position="BottomLeft" X="34" Y="-21" />
+                    </uix:TargetAnchorable.PointOffset>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NClick ClickType="Single" DisplayName="Click the Airport we were looking for" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7f1f390d-0436-4d12-804d-24bf6f054a25" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.makemytrip.com/flights/" DesignTimeRectangle="335, 415, 299, 44" ElementType="ListItem" FriendlyName="'Chennai, India'" FullSelectorArgument="&lt;webctrl aria-role='option' tag='LI' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='option' tag='LI' type='' aaname='' /&gt;" Guid="3f081843-0025-4ae2-b61b-7ebd7e15bc61" ImageBase64="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" InformativeScreenshot="152a9bb11ef73f843fbbff201c60c040.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Flight Booking, Cheap Flights , Air Ticket Booking at Lowest Airfare | MakeMyTrip' /&gt;" SearchSteps="FuzzySelector">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="335, 342, 316, 41" ElementType="InputBox" FriendlyName="'Bengaluru'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;input' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl type='text' tag='INPUT' aaname='' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+            </Sequence>
+            <Sequence DisplayName="Selecting &quot;To&quot;(Destination)" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NClick ClickType="Single" DisplayName="Click 'To'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7f1f390d-0436-4d12-804d-24bf6f054a25" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.makemytrip.com/flights/" DesignTimeRectangle="674, 317, 241, 17" ElementType="Text" FriendlyName="'To'" FullSelectorArgument="&lt;webctrl aaname='To' parentid='root' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='To' parentid='root' tag='SPAN' type='' check:text='To' /&gt;" Guid="ef94d1c7-0bd8-4bb3-b59d-a6bc57a16953" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPUAAAAVCAYAAACe9ajnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC0SURBVHhe7djBDYMgFIDhzuc47CKD6B7GMdiCtpSkh9qEI758X8JB5frnIY8KhCJqCEbUEIyoIRhRQzCihmA+UR+5Lsvyd6WttG3A/C4m9VnzK+R89EfgVkQNwYxHXfaa+nG8rfXsH4CZjEXdg/6+K3VPwoYZDUVdtvQbcLtcy6/dwEyGoj7Xi6ncpnequ4txmIpJDcH4p4ZgxqJ+c/sNt3ARNXBnooZgRA3BiBqCETWEUusTcPbF3dMxvZMAAAAASUVORK5CYII=" InformativeScreenshot="e0f674cb2832fff415fa914b54b8c6e9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Flight Booking, Cheap Flights , Air Ticket Booking at Lowest Airfare | MakeMyTrip' /&gt;" SearchSteps="Selector, FuzzySelector" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT' with the value of in_destination" EmptyFieldMode="[NEmptyFieldMode.None]" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="7f1f390d-0436-4d12-804d-24bf6f054a25" Text="[in_destination]" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.makemytrip.com/flights/" DesignTimeRectangle="633, 340, 320, 45" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;input' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl type='text' tag='INPUT' aaname='' /&gt;" Guid="6dd2b78d-acc9-4abb-aa44-0a3d6e42c411" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAUAAAAAtCAYAAADfjbKaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQhSURBVHhe7d3NL2t5GMDx/gOSG7MQVhIrib2FxJ8gsSH+D+8vIcECCyERicSChYUdYmHHUrxlvEyvauvemXFpy1Ba7zzj+d1fO3rH0Pb2yp1zvp/kCed3Tsrqm3N69PBcXl5KMBiUT+GY7B+dS/AwKoHDM/Hb2ftymjKJ9cQEjp6O/2aCoafXeTb7oYsXR39mOvM5EmcYhjGjvYrH42mN9k3n6upKrq+v5ebmRu7u7uT+/l4eHh7EowcFAgETPv9T4Hx/nsjuH8fi/Rz+Op9C5utvT1+fT3K/nY+/R1JGXyNl9HVfGN/BX2/OtxFmGMa9s7u7K6enp6/O2dmZmWg0aubi4kJisZiJoYbw9vbWRNBzfn4uPp/PhO8gEpXbu3sBAKfRMz4NoJ70JSLo0W+0jBexuD0MAJzreQTNe4B6FqjXxQDgdNo6bZ62z6Nnf3qt/Pj4aHcDgHNp67R52j6Pvjl4cnJidwGA82nztH0evUNyfHxslwHA+bR52j4TwEgkYpcBwPm0eSaAei0cDoftMgA4nzZP22cCGAqF7DIAOJ82jwACcKVkAPVjIwQQgJto87R9BBCA6xBAAK5FAAG4FgEE4FrfFUD9EHF7e7uUlJRIXl6elJeXy9TUlN0LAD+3rAOoT1bV4NXW1orf7zdPWF1cXJSysjLp6OiwR6WvoaHh1RkZGTE/EwByJesA9vf3S1VVld36h364uLCwULa2tuxKetbX180sLy9LX1+fid7MzExyXR/Wqk9uBYBcSQbQd3AsO/tf7PLbKioqZGlpyW6l0jPAnp4eu5UZPcvTsz0N4Obmpl0FgNxLBvBDZ0A+tH+0y28rLS0Vr9drt1INDg5KfX293crMawHUS+3h4WFpamqSxsZGGRgYMP8XgGcYAshG1pfAdXV1Mjo6ardSVVdXy8TEhN3KzH8FUGPb2toqnZ2d5tJ4YWFBuru7paWlRTY2NuxRAJC+rAO4srIiBQUF/zpLGxsbk+Li4qxvWLwUQP2nJfq6zc3NsrOzY9bU3t6etLW1ydDQkLkjDQCZyDqAanp6WvLz86WmpsZc8lZWVppL46KiIpmdnbVHZealAOqHlXt7e837ivp7JiTWu7q65PDw0K4CQHqSAfyl0yv57b/a5fTpXd/JyUlzV3h+ft7cqdU7wBrBubk5e1T6CCCA95IMYKZ3gd+yvb0t4+Pjdit9XAIDeC/fdQn8I7wUQKV3gPXPa7gJAiBX/jcBVPwZDIBc+ukCCADvhQACcC0CCMC1CCAA1yKAAFyLAAJwLQIIwLUIIADXIoAAXIsAAnAtAgjAtQggANcigABcKyWAPFQUgJskA6jxW11dlWg0ap7yHA6HzU6GYRgnjbZNG6et020TwKOjI1lbW5N4PG526CLDMIwTRxunrfsawFP5G7oSDd2GDiNPAAAAAElFTkSuQmCC" InformativeScreenshot="466362f8fc53d34339eeedafe3f96315.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Flight Booking, Cheap Flights , Air Ticket Booking at Lowest Airfare | MakeMyTrip' /&gt;" SearchSteps="Selector, FuzzySelector">
+                    <uix:TargetAnchorable.PointOffset>
+                      <uix:PointOffset Position="BottomLeft" X="41" Y="-22" />
+                    </uix:TargetAnchorable.PointOffset>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NClick ClickType="Single" DisplayName="Click the Airport we were looking for" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7f1f390d-0436-4d12-804d-24bf6f054a25" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.makemytrip.com/flights/" DesignTimeRectangle="635, 415, 299, 44" ElementType="ListItem" FriendlyName="'New Delhi,'" FullSelectorArgument="&lt;webctrl aria-role='option' tag='LI' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='option' tag='LI' type='' aaname='' /&gt;" Guid="080a273d-bcf9-4d2e-aff3-3c3eb26d7ec0" ImageBase64="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" InformativeScreenshot="02e7fd675f41b03625e5a3e47ca825ea.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Flight Booking, Cheap Flights , Air Ticket Booking at Lowest Airfare | MakeMyTrip' /&gt;" SearchSteps="FuzzySelector">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="635, 342, 316, 41" ElementType="InputBox" FriendlyName="'New Delhi'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;input' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl type='text' tag='INPUT' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAUAAAAAtCAYAAADfjbKaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAcjSURBVHhe7Z3JaxRbFIf7HxAkbyG6ieBCREVcBEFxWAgKggM44EYccVgIihslIg6oCKIrFVHUOCCKEqeFAw4giqiLqC/T685kYuahMzgk0fPyO7m3rO7XbVfazrO76/fBoXOHqmoD+TynbtftwOfPn6WiokKqmrqlsqFTKurDEqrvkKCJfz61R4TttxFqGJgfFRWNA+dxRWVjV8zANb1EdXMPg8FgaMBXPT09ngJ+Q3z58kW+fv0q3759k76+Punv75fv379LAJNCoZCKLzgguPLaVin72CIl1U2DUdWor8UDr+5wxk2U1jRHBM4REThvjCiva0sY0RJmMBj+jbKyMmlvb/9ldHR0aITDYY2uri7p7u5WGUKEvb29KsFAZ2enlJeXq/jqmsPS29cvhBCSbSDjgwCR9FkJBvADzNjV3WOmEUJI9uKWoN4DRBaIupgQQrIduA7Og/sCyP5QK//48cMME0JI9gLXwXlwXwA3B1tbW80QIYRkP3Ae3BfACklLS4vpJoSQ7AfOg/tUgM3NzaabEEKyHzhPBYhauKmpyXQTQkj2A+fBfSrAxsZG000IIdkPnEcBEkJ8iSNAPDZCARJC/AScB/dRgBlCIBAwPxFCfhcKMMOgAAlJHRRghkEBEpI6KMAMgwIkJHX8lgDxEHF+fr6MGzdORowYIdOmTZMrV66YUTIcUICEpI6kBYidVSG8FStWSDAY1B1Wnz59KpMmTZLdu3ebWd55/vy5/nEfPnw45o40ly5d0nG8/h9A7hs3btRruiM3N1fWrVsnL1680H3FhoL9N+7bt0/bpaWlMmXKFL0OrhcLfFATv+Nly5ZJQ0ODHk8ISQ1JC/DIkSOycOFC0/oJHi4ePXq0vH//3vR4w8oBmWRhYaHp/cmfFOCJEyfkyZMn8ujRIzl27JjMnDlT+3ft2qU7SXglGQFWV1fL7Nmz9T8bbFiL4wkhqcERYHldi/xd+cl0J2bGjBny7Nkz04oEGeCBAwdMyxtWDgj8sRcXF5uRQf6kAPHe3EB6W7Zs0bHjx4973kIsGQECZNcIgOMJIanBEeDIPSEZmV9quhMzYcIEKSkpMa1IkCXt2LHDtLxh5YASeNGiRRoo+SyxBPju3TtZs2aN5OTkaGmKa9bX1+vYjRs3dP6ZM2e0DV6/fq3zIGh8DwCwEtq6davuDGv5lQABvpAFop4+fbpUVVVpH7LfQ4cOyfjx4zWTXbx4sbx8+dIRZDwBrl69Wt/n5MmT9bgNGzY4z2Vjt4p58+Zp4GccTwhJDUmXwCtXrpSTJ0+aViRLliyRCxcumJY3rBwguKKiIhUssixbYkYL0MoMYigoKJDz589LXl6e3itra2tTKUFONruChI4eParnmDNnjtTV1el5bt26pX14dZNIgNhKe/369c44rolrQ36QOM6H3xHeI94riCdA9OHYq1evyubNm7VtJU0BEjJ8JC1A/FGPGjVKszA3p0+flrFjx+oiyVBwCxCyunz5smZDFy9e1LZbgCgHt23bJlOnTpU3b96oGBB3797VY3CvDtkcsjqboeF5v6VLl6qcISXMgWB27twZkcVZEgnQPY73ZEV67tw55/3gW6sgWyuzeAJcu3atbs0NkPnNnTvXER6CAiRkeEhagODatWtafi5fvlzLz1mzZmnmNmbMGLl9+7aZ5Q23AAFWgpFJQVZYXXYL0EoB7Vhhz2HL4AcPHqgokZ09fPhQRbh//36Vzfz58/9T/oKhZoCQmr1+dNgsNJ4A7TiIFh4FSMjw4Qjwrz0lkpNfZLq9g/teKEGxKnzv3j3NdLACDAneuXPHzEpMtACBXWzAvbbt27c74yg3FyxYoP0QLVZo3WHvHdr7dJDdqVOnVHw4FqUwMsH79+/rijVEGU0iAUbfAzx48KDOtSvG7sDvA1ksBUhIeuEIcKirwIn48OGDnD171rQSE0uAAKvBEA3G7Dgki7IS8nr16pWZOYhdLQVWYigpERAfRIRjkA2uWrVKzw2ZRfMrAcZaBUZJjfLbXsOCTNZ+XpACJCS9+K0SOJXEEyBACYxS2D1uxWgXHa5fv64lKT6eA7FYMB/HuWWJbbBR+qLfLR83bgF6+RyglSIkuGnTJrl586bs3btXJk6cqIsbzAAJST8yQoCQh10UcY9XVlbqR0ZwHxJj+NjJ48ePI57QsJJByYvyF+B8KIvjXQ+4BegOiDjekyCQIDJCSBlzIWjI00qSAiQkvUgbARJvUICEpA4KMMOgAAlJHRRghkEBEpI6KEBCiG+hAAkhvoUCJIT4FgqQEOJbKEBCiG+hAAkhvoUCJIT4FgqQEOJbKEBCiG+hAAkhviVCgPYLhQghxA84AoT8sG18OBzWXZ6xXTwGGQwGIx0jGAwmFaFQSHdxr62t1fOoALGN/Nu3b/W7LiBBdDIYDEa6Rk1NTdIB+cF5gwJsl38B11cdXoCcyDsAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+            </Sequence>
+            <Sequence DisplayName="Selecting the Departure Date" sap:VirtualizedContainerService.HintSize="200,84" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1844, 1096" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="0bc44daa590970e683670220b8cdf287.png" Selector="&lt;html app='chrome.exe' title='Flight Booking, Cheap Flights , Air Ticket Booking at Lowest Airfare | MakeMyTrip'/&gt;" Url="https://www.makemytrip.com/flights/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
