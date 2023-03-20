@@ -54,27 +54,15 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Python</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="376,356" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="source">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">Bengaluru</Literal>
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="destination">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">New Delhi</Literal>
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="departure_date">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">May 31</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="Bengaluru" Name="source" />
+      <Variable x:TypeArguments="x:String" Default="New Delhi" Name="destination" />
+      <Variable x:TypeArguments="x:String" Default="May 31" Name="departure_date" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -83,12 +71,28 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="MakeMyTrip_Flights.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_source">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="source" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_destination">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="destination" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_date">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="departure_date" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="MakeMyTrip_Trains.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_source">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="source" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_destination">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="destination" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_date">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="departure_date" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>
