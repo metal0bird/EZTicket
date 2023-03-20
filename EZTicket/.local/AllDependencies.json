@@ -7564,15 +7564,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Shree\\.nuget\\packages\\": {}
+    "C:\\Users\\Asus\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "EZTicket",
       "projectName": "EZTicket",
-      "projectPath": "C:\\Users\\Shree\\Desktop\\JComps\\EZTicket\\EZTicket\\.local",
-      "packagesPath": "C:\\Users\\Shree\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Shree\\Desktop\\JComps\\EZTicket\\EZTicket\\.local"
+      "projectPath": "D:\\Codes\\RPA\\EZTicket\\EZTicket\\.local",
+      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+      "outputPath": "D:\\Codes\\RPA\\EZTicket\\EZTicket\\.local"
     },
     "frameworks": {
       "net461": {
