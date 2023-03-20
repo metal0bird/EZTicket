@@ -178,6 +178,18 @@
         "C:\\Users\\Asus\\.nuget\\packages\\uipath.vision/3.1.4\\lib/net461/UiPath.Vision.dll"
       ],
       "Path": "C:\\Users\\Asus\\.nuget\\packages\\uipath.uiautomation.activities\\21.10.6"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.Python.Activities",
+        "Version": "1.6.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Asus\\.nuget\\packages\\uipath.python.activities/1.6.0\\lib/net461/UiPath.Python.Activities.Design.dll",
+        "C:\\Users\\Asus\\.nuget\\packages\\uipath.python.activities/1.6.0\\lib/net461/UiPath.Python.Activities.dll",
+        "C:\\Users\\Asus\\.nuget\\packages\\uipath.python.activities/1.6.0\\lib/net461/UiPath.Python.dll"
+      ],
+      "Path": "C:\\Users\\Asus\\.nuget\\packages\\uipath.python.activities\\1.6.0"
     }
   ],
   "Conflicts": [],
@@ -1211,6 +1223,11 @@
         }
       ]
     },
+    "UiPath.Python.Activities": {
+      "Id": "UiPath.Python.Activities",
+      "Version": "1.6.0",
+      "Dependencies": []
+    },
     "UiPath.System.Activities": {
       "Id": "UiPath.System.Activities",
       "Version": "21.10.5",
@@ -2236,6 +2253,18 @@
         "C:\\Users\\Asus\\.nuget\\packages\\uipath.platform\\21.10.0\\lib\\net461\\UiPath.Platform.dll"
       ],
       "Path": "C:\\Users\\Asus\\.nuget\\packages\\uipath.platform\\21.10.0"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.Python.Activities",
+        "Version": "1.6.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Asus\\.nuget\\packages\\uipath.python.activities\\1.6.0\\lib\\net461\\UiPath.Python.Activities.Design.dll",
+        "C:\\Users\\Asus\\.nuget\\packages\\uipath.python.activities\\1.6.0\\lib\\net461\\UiPath.Python.Activities.dll",
+        "C:\\Users\\Asus\\.nuget\\packages\\uipath.python.activities\\1.6.0\\lib\\net461\\UiPath.Python.dll"
+      ],
+      "Path": "C:\\Users\\Asus\\.nuget\\packages\\uipath.python.activities\\1.6.0"
     },
     {
       "Package": {

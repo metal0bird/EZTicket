@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "V9DaPhJC8mHjwX3Udjy2UmTBvoWR4sRxZcvEUulDezTB5m7EjKGJD88VA0pnE6GYTG47HZOy1d3FsbWED+dvjA==",
+  "dgSpecHash": "13WIDovkp3woKXwbG1ww0VrhmbpdQc8cVIP2BnDix5oJFJVhgOaI8BKBXkLdwecrbKUf+LE9RzQUw1tI2ogrTA==",
   "success": true,
   "projectFilePath": "D:\\Codes\\RPA\\EZTicket\\EZTicket\\.local\\",
   "expectedPackageFiles": [
@@ -91,6 +91,7 @@
     "C:\\Users\\Asus\\.nuget\\packages\\uipath.ocr.activities\\3.3.2\\uipath.ocr.activities.3.3.2.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\uipath.ocr.contracts\\2.9.1\\uipath.ocr.contracts.2.9.1.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\uipath.platform\\21.10.0\\uipath.platform.21.10.0.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\uipath.python.activities\\1.6.0\\uipath.python.activities.1.6.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\uipath.system.activities\\21.10.5\\uipath.system.activities.21.10.5.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\uipath.telemetry.client\\1.5.3\\uipath.telemetry.client.1.5.3.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\uipath.uiautomation.activities\\21.10.6\\uipath.uiautomation.activities.21.10.6.nupkg.sha512",
