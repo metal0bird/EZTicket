@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="EaseMyTrip_Flights" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="EaseMyTrip_Flights" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_source" Type="InArgument(x:String)" />
     <x:Property Name="in_destination" Type="InArgument(x:String)" />
@@ -7,10 +7,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1000,2025</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1090,867</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EaseMyTrip_Flights_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="39">
+    <scg:List x:TypeArguments="x:String" Capacity="82">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -50,10 +50,14 @@
       <x:String>UiPath.Activities.System.Workflow.Business</x:String>
       <x:String>UiPath.Python</x:String>
       <x:String>UiPath.Python.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="68">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="35">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -91,18 +95,23 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="EaseMyTrip_Flights" sap:VirtualizedContainerService.HintSize="644,1960" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="EaseMyTrip_Flights" sap:VirtualizedContainerService.HintSize="304,334" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="SplitDate" />
       <Variable x:TypeArguments="x:String" Name="curr_month" />
-      <Variable x:TypeArguments="x:Int32" Default="1" Name="index" />
+      <Variable x:TypeArguments="x:Int32" Name="index">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" Value="1" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="sd:DataTable" Name="DataTable" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="602,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+    <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_11">
       <Assign.To>
         <OutArgument x:TypeArguments="s:String[]">[SplitDate]</OutArgument>
       </Assign.To>
@@ -110,21 +119,21 @@
         <InArgument x:TypeArguments="s:String[]">[Split(in_date, " ")]</InArgument>
       </Assign.Value>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Book Flights, Hotels, Bus Tickets &amp; Holidays - EaseMyTrip.com" sap:VirtualizedContainerService.HintSize="602,1768" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="True" ScopeGuid="d8e8f259-9d84-4243-a92f-f1d36d64e2b7" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Book Flights, Hotels, Bus Tickets &amp; Holidays - EaseMyTrip.com" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="True" ScopeGuid="d8e8f259-9d84-4243-a92f-f1d36d64e2b7" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="568,1552" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,614" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="526,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
-            <Sequence DisplayName="Entering Source" sap:VirtualizedContainerService.HintSize="526,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+            <Sequence DisplayName="Entering Source" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -184,7 +193,7 @@
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NClick>
             </Sequence>
-            <Sequence DisplayName="Entering Destination" sap:VirtualizedContainerService.HintSize="526,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Entering Destination" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -242,14 +251,14 @@
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NClick>
             </Sequence>
-            <Sequence DisplayName="Entering Departure Date" sap:VirtualizedContainerService.HintSize="526,1185" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Entering Departure Date" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ClickType="Single" DisplayName="Click 'DEPARTURE DATE'" sap:VirtualizedContainerService.HintSize="484,156" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d8e8f259-9d84-4243-a92f-f1d36d64e2b7" Version="V1">
+              <uix:NClick ClickType="Single" DisplayName="Click 'DEPARTURE DATE'" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d8e8f259-9d84-4243-a92f-f1d36d64e2b7" Version="V1">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="https://www.easemytrip.com/" DesignTimeRectangle="883, 258, 152, 90" ElementType="InputBox" FriendlyName="'DEPARTURE DATE'" FullSelectorArgument="&lt;webctrl id='dvfarecal' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='dvfarecal' tag='DIV' type='' aaname='                                                                                                                         ' /&gt;" Guid="ba945763-dfc9-4509-a3cf-2818f938f399" ImageBase64="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" InformativeScreenshot="58763423aba5eb92e9d857ea58524e84.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Book Flights, Hotels, Bus Tickets &amp;amp; Holidays - EaseMyTrip.com' /&gt;" SearchSteps="FuzzySelector">
                     <uix:TargetAnchorable.PointOffset>
@@ -259,12 +268,12 @@
                 </uix:NClick.Target>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NClick>
-              <uix:NGetText DisplayName="Get Text 'Apr 2023'" sap:VirtualizedContainerService.HintSize="484,156" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="d8e8f259-9d84-4243-a92f-f1d36d64e2b7" Version="V1">
+              <uix:NGetText DisplayName="Get Text 'Apr 2023'" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="d8e8f259-9d84-4243-a92f-f1d36d64e2b7" Version="V1">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="https://www.easemytrip.com/" DesignTimeRectangle="741, 323, 360, 40" ElementType="Text" FriendlyName="'Apr 2023'" FullSelectorArgument="&lt;webctrl aaname='Apr 2023' parentid='dvcalendar' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='dvcalendar' tag='DIV' type='' /&gt;" Guid="40c481a8-fa90-4d8a-b56c-98668b0b0245" InformativeScreenshot="4a7092f72949d066e107a762f2332645.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Book Flights, Hotels, Bus Tickets &amp;amp; Holidays - EaseMyTrip.com' /&gt;" SearchSteps="FuzzySelector">
                     <uix:TargetAnchorable.Anchors>
@@ -279,12 +288,12 @@
                 </uix:NGetText.Text>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NGetText>
-              <Assign sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_5">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[curr_month]</OutArgument>
                 </Assign.To>
@@ -292,10 +301,10 @@
                   <InArgument x:TypeArguments="x:String">[Split(curr_month, " ")(0)]</InArgument>
                 </Assign.Value>
               </Assign>
-              <If Condition="[curr_month.Equals(SplitDate(0))]" sap:VirtualizedContainerService.HintSize="484,302" sap2010:WorkflowViewState.IdRef="If_1">
+              <If Condition="[curr_month.Equals(SplitDate(0))]" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="If_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -354,7 +363,7 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <Assign sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="Assign_13">
+              <Assign sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_13">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Int32">[index]</OutArgument>
                 </Assign.To>
@@ -362,12 +371,34 @@
                   <InArgument x:TypeArguments="x:Int32">[Cint(SplitDate(1))]</InArgument>
                 </Assign.Value>
               </Assign>
-              <uix:NClick ClickType="Single" DisplayName="Click the Date" sap:VirtualizedContainerService.HintSize="484,156" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d8e8f259-9d84-4243-a92f-f1d36d64e2b7" Version="V1">
+              <uix:NClick ClickType="Single" DisplayName="Click the Date" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d8e8f259-9d84-4243-a92f-f1d36d64e2b7" Version="V1">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="https://www.easemytrip.com/" DesignTimeRectangle="869, 455, 55, 50" ElementType="ListItem" FriendlyName="'215332'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl tag='LI' aaname='{0}' idx='1' /&gt;&quot;, index)]" FuzzySelectorArgument="&lt;webctrl tag='LI' aaname='21' type='' check:text='215332' /&gt;" Guid="40f75a84-0639-4ecf-8eb9-8730bdd4f3fb" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADsAAAA2CAYAAAB5u+FtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGsSURBVGhD7Zc9TsNAEEa5CtfiGJyBE1BwB0p62nR0SBR0EZKRKJAQET8WyaLneKLxMiaJsiFmPCM9YXY/KX47/lkfpbaqqmqP/JW4jUuWg7HQ6ezxxatLcKNC1hshawU9ELJW0AMhawU9ELJW0AMhawV3ZfLw1f7Csi7vajNTz1M6v/n8MVeCP5FFbFYv0un1++p/LXVy9ZYeZ4smA/9aNgdppKS7dPT+ed5IupPNOy24k5Wu0s18zpXsb6LgRnadKLiQzR9IfbiQpZtW8QTWOReyQyFkraAHQtYKeiBkraAHQtYKbgq7JF2yccjH+X7lO1Z2V1L6O1dvRkp81BeX5QTXbQuhL4fQ7dNygc4mH53x6cu8WSAZ25aDydJxK8dYvo0ErgDGByXLCenSQhxL6XF9KVuiwCKCNbcpxWU1SHBv8jef26azjMk9rse3Za+ynBz3mfVgsaQgX6AS96pwsM72XZZarqQoFJXlpJCT6nuNUNJV5slJce+yOKBfSdSur5+9dnZohKwV9EDIWkEPhKwV9EDIWkEPhKwV9MBKloOx0Oms1xK3Ecmm9A3UGZnehoWE6gAAAABJRU5ErkJggg==" InformativeScreenshot="1e18d6eb5ceb5545d88f0fdf9775568e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Book Flights, Hotels, Bus Tickets &amp;amp; Holidays - EaseMyTrip.com' /&gt;" SearchSteps="Selector" />
                 </uix:NClick.Target>
               </uix:NClick>
             </Sequence>
+            <uix:NClick ClickType="Single" DelayAfter="5" DisplayName="Click 'Search'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d8e8f259-9d84-4243-a92f-f1d36d64e2b7" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.easemytrip.com/" DesignTimeRectangle="1346, 212, 153, 89" ElementType="Button" FriendlyName="'Search'" FullSelectorArgument="&lt;webctrl parentid='showOWRT' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='showOWRT' tag='BUTTON' type='button' aaname='  Search' check:text='Search' /&gt;" Guid="c4d7a9d1-1b73-48a4-bd41-e92a2189f488" ImageBase64="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" InformativeScreenshot="d34e43eec87fe8eca6e54b10578194bb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Book Flights, Hotels, Bus Tickets &amp;amp; Holidays - EaseMyTrip.com' /&gt;" SearchSteps="FuzzySelector" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[DataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='AirlineName'&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='FlightNumber'&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='DepartureTime'&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column3' Name='ArrivalTime'&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column4' Name='FlightDuration'&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column5' Name='FlightType'&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column6' Name='Price'&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='NumberColumnFormat' DecimalSeparator='.' ThousandsSeparator=',' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='text'&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='text'&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='span' idx='2' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='text'&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column3' attr='text'&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column4' attr='text'&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column5' attr='text'&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='span' idx='2' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column6' attr='text'&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='5' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NExtractData_1" MaximumResults="0" ScopeIdentifier="d8e8f259-9d84-4243-a92f-f1d36d64e2b7" Version="V1">
+              <uix:NExtractData.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="568, 295, 947, 25892" FriendlyName="'Oops! No'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='ResultDiv' tag='DIV' /&gt;" Guid="53fa6b5f-6b5c-4911-8d39-91287aa624b7" InformativeScreenshot="8f0c51eb836fb492c98bb3a7b6581039.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='EaseMyTrip.com Lowest Airfare, Flight Tickets, Cheap Air Tickets – EaseMyTrip.com' /&gt;" SearchSteps="Selector" />
+              </uix:NExtractData.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NExtractData>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
@@ -376,10 +407,18 @@
       </uix:NApplicationCard.TargetApp>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
+    <ui:WriteRange AddHeaders="True" DataTable="[DataTable]" DisplayName="Writing Data Table to Excel Sheet" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="EaseMyTrip" StartingCell="A1" WorkbookPath="Datasheets\Flights_Unprocessed.xlsx">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:WriteRange>
   </Sequence>
 </Activity>
