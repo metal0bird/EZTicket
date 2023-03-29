@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1431,1335</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1702,1335</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>MakeMyTrip_Flights_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="74">
@@ -87,7 +87,6 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="MakeMyTrip_Flights" sap:VirtualizedContainerService.HintSize="476,1270" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -110,7 +109,7 @@
         <InArgument x:TypeArguments="s:String[]">[Split(in_date," ")]</InArgument>
       </Assign.Value>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="MakeMyTrip Data Scraping" sap:VirtualizedContainerService.HintSize="434,923" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="True" ScopeGuid="7f1f390d-0436-4d12-804d-24bf6f054a25" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="MakeMyTrip Data Scraping" sap:VirtualizedContainerService.HintSize="434,923" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="True" ScopeGuid="7f1f390d-0436-4d12-804d-24bf6f054a25" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
