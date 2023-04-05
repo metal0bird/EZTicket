@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1405,1846</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1405,1722</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EaseMyTrip_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -84,10 +84,9 @@
       <AssemblyReference>UiPath.Python.Activities</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="EaseMyTrip" sap:VirtualizedContainerService.HintSize="494,1781" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="EaseMyTrip" sap:VirtualizedContainerService.HintSize="494,1657" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="index" />
       <Variable x:TypeArguments="x:String" Name="DepartureTime">
@@ -101,11 +100,7 @@
         </Variable.Default>
       </Variable>
       <Variable x:TypeArguments="s:String[]" Name="SplitDate" />
-      <Variable x:TypeArguments="x:String" Name="AirlineName">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">AirAsia</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="AirAsia" Name="AirlineName" />
       <Variable x:TypeArguments="x:String" Name="CurMonth" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -157,7 +152,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="452,84" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[AirlineName]" />
     <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Flight Booking, Cheap Flights, Air tickets at Lowest Airfare Online" sap:VirtualizedContainerService.HintSize="452,1332" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="True" ScopeGuid="5aa77021-153c-4ea8-b6d9-a2b79a883e6c" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
@@ -410,7 +404,7 @@
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="https://flight.easemytrip.com/FlightList/Index?srch=BLR-Bangalore-India|DEL-NewDelhi-%20India|31/05/2023&amp;px=1-0-0&amp;cbn=0&amp;ar=undefined&amp;isow=true&amp;isdm=true&amp;lang=en-us&amp;&amp;IsDoubleSeat=false&amp;CCODE=IN&amp;curr=INR&amp;apptype=B2C" DesignTimeRectangle="326, 420, 21, 21" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl idx='4' isleaf='1' parentid='hidesec' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' isleaf='1' parentid='hidesec' tag='SPAN' aaname='' /&gt;" Guid="6ae1d5de-a7b9-49bf-9c4f-b40c1624b1ca" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABZSURBVDhPY/hPA0BbQ589e/b/yJEj//fv308yBukD6YcBuKEgiU+fPkF5pAGQPpB+GIAbCrKREoCsf9RQCBg1FMoiD4waCmUNSUNpUkrRpDylJqCBof//AwCziq8nhyWEvgAAAABJRU5ErkJggg==" InformativeScreenshot="5b6cf5a09ffa2209fdfb4d8d626bc089.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='EaseMyTrip.com Lowest Airfare, Flight Tickets, Cheap Air Tickets – EaseMyTrip.com' /&gt;" SearchSteps="FuzzySelector, Image">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target DesignTimeRectangle="328, 422, 147, 28" ElementType="CheckBox" FriendlyName="'AirAsia AirAsia'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='hidesec' tag='DIV' innertext='                                                      AirAsia                                                          AirAsia                                                                           ' aaname='                                              ' /&gt;" FuzzySelectorArgument="[String.Format(&quot;&lt;webctrl type='' parentid='hidesec' tag='DIV' innertext='*{0}*' aaname='                                              ' /&gt;&quot;, AirlineName)]" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJcAAAAgCAYAAAAfUOq0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG1SURBVHhe7dpBjoIwFIDhuVPPJVch3ARP4Ma94RImJqy8wLOPllIENUZezcz8X0Ii1TIL/zxIxh8BjBAXzKS4zuezHI9HORwObx+6T/cDuRSXBnK9XuPZe3Sf7gdyKS6dQJ/4dD/+HuKCmaJxdY2Tat/Hs2BtbeFUi9u18uJTIpdWKldLF0/xXQXj6qTe1cPx7pffNZXUepziAn6FcnH56aNx9Pt5JPl51/jwdEo5J64ZE/RR6mudSmnNG6aU/1w8wjU04HHC+dfZ+y+nIzZXKK5e2jSxYizRPK48qmARX3g5fDaPNMjjyuV/H6WUietuyjhXSXsJb83jmdYDjSLfl02g8ZqzGPO47vcSV2lF4ur39Twaf+sbI3kalw+ont3OViZTvI2Ga0zvzycbk+sbCsS1dqua1p7FtZxk62tTrA/iGqYccZVmH5dOlrvnKDV++Y/j8qGsBRGvNzyfLW55Wcj5rdivtdnzGsoo9ECP/4i4YIa4YCbFxa8isLUUF7/nwtZSXMDWiAtmiAtmiAtmiAtmiAtmiAtmiAtmiAtmiAtmiAtmUlz8bxFbS3FpIPwqAtsRuQHg1Vrdc6dRPAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
